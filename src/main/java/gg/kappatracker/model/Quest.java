@@ -18,4 +18,6 @@ public class Quest {
     @ManyToOne
     @JoinColumn(name = "trader_id")
     private Trader trader;
+
+    private Long displayOrder;
 }
