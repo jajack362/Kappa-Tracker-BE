@@ -3,6 +3,7 @@ package gg.kappatracker.controller;
 import gg.kappatracker.model.Quest;
 import gg.kappatracker.model.QuestItem;
 import gg.kappatracker.model.QuestItemGroupedDTO;
+import gg.kappatracker.model.TraderQuestItemsDTO;
 import gg.kappatracker.service.QuestItemService;
 import gg.kappatracker.service.QuestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,4 +31,10 @@ public class QuestItemController {
     public List<QuestItemGroupedDTO> getAllQuestItemsGrouped() {
         return questItemService.countTotalPerItem();
     }
+
+    @GetMapping("/quest-items-by-trader")
+    public List<TraderQuestItemsDTO> getQuestItemsByTrader() {
+        return questItemService.getAllQuestItemsGroupedByTrader();
+    }
+
 }
